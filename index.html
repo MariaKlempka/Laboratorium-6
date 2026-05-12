@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <h1 class="text-2xl font-bold text-primary">Kalkulator urodzin</h1>
+
+    <form id="form">
+      <input type="date" id="date" />
+      <button type="submit" class="bg-blue-300 p-4">Oblicz</button>
+    </form>
+
+    <dialog id="dialog" class="bg-gray-200">
+      <div class="flex justify-end"><button id="close">x</button></div>
+      <p id="message" class="text-red-600"></p>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
