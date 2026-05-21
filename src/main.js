@@ -13,24 +13,21 @@ document.getElementById('form').addEventListener('submit', function(e) {
   const todayMD = today.format('MM-DD')
   const birthdayMD = parts[1] + '-' + parts[2]
 
+  const daysPassed = today.diff(dayjs(input), 'days')
+
   let text = ''
 
   if (todayMD === birthdayMD) {
-    text = 'Wszystkiego najlepszego!'
+    text = 'Minęło ' + daysPassed + ' dni od twoich urodzin. Wszystkiego najlepszego!'
   } else {
-    let lastBirthday, nextBirthday
-
+    let nextBirthday
     if (birthdayMD < todayMD) {
-      lastBirthday = dayjs(today.year() + '-' + birthdayMD)
-      nextBirthday = lastBirthday.add(1, 'year')
+      nextBirthday = dayjs(today.year() + '-' + birthdayMD).add(1, 'year')
     } else {
-      lastBirthday = dayjs((today.year() - 1) + '-' + birthdayMD)
       nextBirthday = dayjs(today.year() + '-' + birthdayMD)
     }
 
-    const daysPassed = today.diff(lastBirthday, 'days')
     const weeksUntil = nextBirthday.diff(today, 'week')
-
     text = 'Minęło ' + daysPassed + ' dni od twoich urodzin.'
 
     if (weeksUntil === 0) {
