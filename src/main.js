@@ -8,7 +8,7 @@ async function loadArticles() {
   const order = document.getElementById('sort').value
   const response = await fetch(url + '?select=*&order=' + order, {
     headers: {
-      apilkey: key,
+      apikey: key,
     }
   })
   const data = await response.json()
@@ -56,7 +56,7 @@ document.getElementById('form').addEventListener('submit', async function(e) {
   const response = await fetch(url, {
     method: 'POST',
     headers: {
-      apiKey: key,
+      apikey: key,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body)
