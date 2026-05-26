@@ -1,5 +1,5 @@
 {
-  "name": "lab5",
+  "name": "lab6",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -13,6 +13,6 @@
     "vite": "^8.0.12"
   },
   "dependencies": {
-    "dayjs": "^1.11.20"
+"dayjs": "^1.11.20"
   }
 }
